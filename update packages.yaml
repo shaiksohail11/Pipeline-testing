@@ -7,12 +7,12 @@ trigger:
   - develop
 
 stages:  
-  - stage: updating packages
-    displayName: updating packages
+  - stage: updating_packages
+    displayName: updating_packages
 
     jobs:
       - job: print
-        displayName: updating packages
+        displayName: updating_packages
 
         steps: 
           - script: sudo apt update
