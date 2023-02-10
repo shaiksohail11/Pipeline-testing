@@ -1,0 +1,12 @@
+---
+pool:
+  vmImage: ubuntu-latest
+  name: "Azure Pipelines"
+
+trigger:
+  - master
+  
+steps:
+  - task: ShellScript@2
+    inputs:
+      scriptPath: 'apache.sh'
