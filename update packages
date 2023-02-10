@@ -1,0 +1,18 @@
+---
+pool:
+  name: "Azure Pipelines"
+  vmImage: ubuntu-latest
+
+trigger:
+  - develop
+
+stages:  
+  - stage: updating packages
+    displayName: updating packages
+
+    jobs:
+      - job: print
+        displayName: updating packages
+
+        steps: 
+          - script: sudo df -h
