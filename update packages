@@ -15,4 +15,5 @@ stages:
         displayName: updating packages
 
         steps: 
-          - script: sudo df -h
+          - script: sudo apt update
+          
