@@ -9,4 +9,4 @@ trigger:
 steps:
   - task: ShellScript@2
     inputs:
-      scriptPath: 'apache.sh'
+      scriptPath: 'shellscript.sh'
