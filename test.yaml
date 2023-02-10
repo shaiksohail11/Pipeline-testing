@@ -15,12 +15,11 @@ stages:  # stage1
         displayName: build_mac
 
         steps:
-          - script: 
-              - echo hello shaik
-              - echo Assalamualaikum shaik
-              - echo Namaste shaik
-              - echo vanakkkam shaik
-              - echo namaskaram shaik
+          - script:  echo hello bhai
+          - script:   echo Assalamualaikum bhai
+          - script:  echo Namaste bhai
+          - script:  echo vanakkkam bhai
+          - script:  echo namaskaram bh
 
   - stage: stage2  # stage 2
     displayName: stage2
@@ -30,12 +29,11 @@ stages:  # stage1
         displayName: build_linux
 
         steps:
-          - script: 
-              - echo hello bro
-              - echo Assalamualaikum bro
-              - echo Namaste bro
-              - echo vanakkkam bro
-              - echo namaskaram bro
+          - script:  echo hello bro
+          - script:   echo Assalamualaikum bro
+          - script:  echo Namaste bro
+          - script:  echo vanakkkam bro
+          - script:  echo namaskaram bro
       
   - stage: stage3  # stage 3
     displayName: stage3
@@ -44,13 +42,13 @@ stages:  # stage1
       - job: build_windows
         displayName: build_windows
 
+        
         steps:
-          - script: 
-              - echo hello Anna
-              - echo Assalamualaikum Anna
-              - echo Namaste Anna
-              - echo vanakkkam Anna
-              - echo namaskaram Anna
+          - script:  echo hello bro
+          - script:   echo Assalamualaikum bro
+          - script:  echo Namaste bro
+          - script:  echo vanakkkam bro
+          - script:  echo namaskaram bro
 
   - stage: stage4  # stage 4
     displayName: stage4
@@ -59,14 +57,12 @@ stages:  # stage1
       - job: build_unix
         displayName: build_unix
 
-        steps:
-          - script: 
-              - echo hello bhai
-              - echo Assalamualaikum bhai
-              - echo Namaste bhai
-              - echo vanakkkam bhai
-              - echo namaskaram bhai
-
+        steps:  
+          - script:  echo hello bro
+          - script:   echo Assalamualaikum bro
+          - script:  echo Namaste bro
+          - script:  echo vanakkkam bro
+          - script:  echo namaskaram bro
 
 
   
