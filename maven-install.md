@@ -1,3 +1,12 @@
+Installing Java-17
+------------------
+* The Commands are :
+ ```
+ sudo apt update
+ sudo apt install openjdk-17-jdk -y
+ java --version
+ ```
+
 Installing maven manually
 -------------------------
 ```
@@ -32,5 +41,7 @@ sudo chmod +x /etc/profile.d/maven.sh
 ### save the file 
 
 Execute the command `sh maven-install.sh 3.9.0 && source /etc/profile.d/maven.sh`
+
+* To check maven version ` mvn --version`
 
 *  [refer here](https://stackoverflow.com/questions/44438848/maven-crashes-when-trying-to-compile-a-project-error-executing-maven) for the documentation
