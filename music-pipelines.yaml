@@ -1,0 +1,68 @@
+---
+pool: "Azure Pipelines"
+
+trigger:
+  - main
+
+stages:
+  - stage: restorebuild
+    displayName: restore and build
+
+    jobs:
+      - job: build_dotnet
+        displayName: build_dotnet
+    
+        steps:
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: 'restore'
+              packagesToPack: '**/Musicstore.csproj'
+
+          - task: DotNetCoreCLI@2
+            inputs: 
+              command: 'build'
+              packagesToPack: '**/Musicstore.csproj'
+              packDirectory: '$(Build.ArtifactStagingDirectory)'
+        
+          - task: DotNetCoreCLI@2
+            inputs: 
+              command: 'test'
+              packagesToPack: '**/*.MusicStoreTest.csproj'
+              publishTestResults: true
+
+
+  - stage: test
+    displayName: test
+
+    jobs:
+      - job: test_dotnet
+        displayName: test_dotnet
+    
+        steps:
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: 'restore'
+              packagesToPack: '**/MusicStoreTest.csproj'
+
+
+          - task: DotNetCoreCLI@2
+            inputs: 
+              command: 'build'
+              packagesToPack: '**/MusicStoreTest.csproj'
+              packDirectory: '$(Build.ArtifactStagingDirectory)'
+        
+          - task: NodeTool@0
+            inputs:
+              versionSource: 'spec'
+              versionSpec: '16.x'
+          
+          - task: Npm@1
+            inputs:
+              command: 'install'
+              workingDir: 'MusicStore/ClientApp'
+              
+          - task: Npm@1
+            inputs:
+              command: custom
+              customCommand: test
+              workingDir: 'MusicStore/ClientApp'
